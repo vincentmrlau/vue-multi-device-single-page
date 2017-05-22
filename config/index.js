@@ -1,6 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
-var device = process.env.DEVICE_ENV
+var device = process.env.DEVICE_ENV || 'undefined'
+
 
 // 入口模板路径
 var htmlTemplate =  './src/device/' + device + '/index.html'
@@ -31,12 +32,10 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    // 加入html入口
-    htmlTemplate: htmlTemplate,
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
-    assetsPublicPath: '',
+    assetsPublicPath: '/',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

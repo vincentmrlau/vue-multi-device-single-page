@@ -15,6 +15,11 @@ var env = process.env.NODE_ENV === 'testing'
 
 // 设置device相关变量
 var device = process.env.DEVICE_ENV
+//设置入口
+var extraPolyFill = require('./device-conf').polyfills ||[]
+var entry = {
+  index: extraPolyFill.concat('./src/device/' + device + '/index.js')
+}
 
 console.log(config.build.htmlTemplate)
 var webpackConfig = merge(baseWebpackConfig, {
@@ -24,6 +29,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       extract: true
     })
   },
+  // 写入prod的入口
+  entry: entry,
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,

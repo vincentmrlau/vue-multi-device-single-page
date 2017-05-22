@@ -1,31 +1,25 @@
 require('./check-versions')()
 
-var chalk = require('chalk')
-// 设置process.env.DEVICE_ENV参数
-// 没有则返回错误
-var device = process.argv[2]
-if(device){
-  process.env.DEVICE_ENV = device
-}else {
-  console.log(chalk.bgRed('  错误：缺少参数，详情请看readme.md  '))
-  return false
-}
 
+console.log('dev-server:before require 0')
 var config = require('../config')
+console.log('dev-server:before require 1')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-
+console.log('dev-server:before require')
 
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
+var chalk = require('chalk')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
-console.log(webpackConfig.output)
+console.log('output', webpackConfig.output)
+console.log('entry', webpackConfig.entry)
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -51,6 +45,7 @@ var hotMiddleware = require('webpack-hot-middleware')(compiler, {
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
     hotMiddleware.publish({ action: 'reload' })
+    console.log(devMiddleware.fileSystem)
     cb()
   })
 })
@@ -78,7 +73,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port + '/' + device + '/'
+var uri = 'http://localhost:' + port
 
 var _resolve
 var readyPromise = new Promise(resolve => {

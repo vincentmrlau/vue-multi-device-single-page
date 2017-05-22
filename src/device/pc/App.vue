@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="../../assets/logo.png">
-    <h1>pc 用部分</h1>
+    <h1>pcde用部分</h1>
     <router-view></router-view>
   </div>
 </template>

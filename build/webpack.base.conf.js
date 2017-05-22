@@ -6,12 +6,12 @@ var vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-//设置入口
-var device = process.env.DEVICE_ENV
-var entry = {index: './src/device/' + device + '/index.js'}
-module.exports = {
 
-  entry: entry,
+var device = process.env.DEVICE_ENV
+
+
+
+module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

@@ -5,8 +5,12 @@ process.env.NODE_ENV = 'production'
 // 设置process.env.DEVICE_ENV参数
 // 没有则返回错误
 var device = process.argv[2]
+var checkDevice = require('./device-conf').checkDevice
 if(device){
   process.env.DEVICE_ENV = device
+  if(!checkDevice()){
+    return false
+  }
 }else {
   console.log(chalk.bgRed('  错误：缺少参数，详情请看readme.md  '))
   return false
