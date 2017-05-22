@@ -1,24 +1,31 @@
 <template>
-  <div id="app">
-    <img src="../../assets/logo.png">
-    <h1>pcde用部分</h1>
-    <router-view></router-view>
+  <div>
+    <transition name="main2" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
+
 </template>
 
 <script>
+
 export default {
-  name: 'app'
+  name: 'app',
+  watch: {
+    '$route': (to, from) => {
+      console.log(to)
+      console.log(from)
+    }
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.main2-enter-active, .main2-leave{
+  transition: all 1s;
+}
+.main2-enter, .main2-leave-active{
+  opacity: 0;
+  transform: translateX(20px);
 }
 </style>
