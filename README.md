@@ -14,12 +14,17 @@
 
 ![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build.png?raw=true)
 > npm run build 'device'
-> device ： 接受的参数，在 `/build/device-conf.js`下有限制
+> device ： 接受的参数，在 `/build/device-conf.js`里面有限制
 > 示例： `npm run build pc` 打一个pc端的包 
 
 > npm run build-all
-> 把
+> 打所有终端的包
 
+### dev 开发
+> npm run dev
+> 开始进行调试，基于vue-cli的,所以基本是vue-cli的
+1.	自动打开一个网页
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/run-dev.png?raw=true)
 
 ##	整体目录
     
