@@ -3,12 +3,15 @@
 [![vue-cli](https://img.shields.io/badge/vueCli-v2.8.2-orange.svg)](https://cn.vuejs.org/) [![vue 2.0](https://img.shields.io/badge/vue-v2.2.6-green.svg)](https://cn.vuejs.org/) [![vue-resuorce](https://img.shields.io/badge/vueResource-v1.3.3-green.svg)](https://github.com/pagekit/vue-resource/blob/develop/docs/http.md) [![vue-router](https://img.shields.io/badge/vueRouter-v2.3.1-green.svg)](https://cn.vuejs.org/) [![vuex](https://img.shields.io/badge/vuex-v2.3.1-green.svg)](https://cn.vuejs.org/) 
 
 > 多端（默认pc+mobile+app）的单页应用的vue工程目录
-> 
 > 基于vue,整合了vuex vue-resuorece vue-router
->
 > 整个基于vue-cli生成的目录进行修改
 
-##	使用
+##	文档目录
+1.	[使用](#content)
+##	开发的目录结构
+> 
+
+##	<span id="build">使用 </span>
 ### build 打包
 > 打生产环境的包，会自动把不同终端的文件按终端名称分开
 
@@ -27,9 +30,9 @@
 1.	自动打开一个网页，从这里选择要调试的终端
 ![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/run-dev-url.png?raw=true)
 2.	开始调试
-![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
+![index-pc](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
-##	整体目录
+##	<span id="content">目录注释 </span>
     
 ```
 │  .babelrc
