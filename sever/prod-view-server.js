@@ -4,8 +4,10 @@
 'use strict'
 const express = require('express')
 const opn = require('opn')
+const bodyParser = require('body-parser')
 
 let app = express()
+app.use(bodyParser())
 app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
@@ -19,9 +21,16 @@ app.all('*', function (req, res, next) {
 
 app.use('/',express.static('./dist/'))
 
-app.post('/post', (req, res, next) => {
+app.post('/getAuth', (req, res, next) => {
   res.json({
-    'postRes': 'OK'
+    'Auth': 'Vincent-sever-coder',
+    'recHeader': req.get('Authorization')
+  })
+})
+
+app.get('/count', (req, res, next) => {
+  res.json({
+    count: 10
   })
 })
 
