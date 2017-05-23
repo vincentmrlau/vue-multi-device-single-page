@@ -10,12 +10,15 @@
 
 ##	工具的工作表现
 ### build 打包
+> 打生产环境的包，会自动把不同终端的文件按终端名称分开
+
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build.png?raw=true)
 > npm run build 'device'
 > device ： 接受的参数，在 `/build/device-conf.js`下有限制
+> 示例： `npm run build pc` 打一个pc端的包 
 
-1. 示例： `npm run build pc` 打一个pc端的包 
-2. 表现： 
-![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build-pc.png?raw=true)
+> npm run build-all
+> 把
 
 
 ##	整体目录
