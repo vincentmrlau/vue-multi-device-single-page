@@ -1,10 +1,6 @@
 # vue-multi-device-single-page 
 
-[![vue-cli](https://img.shields.io/badge/vueCli-v2.8.2-green.svg)](https://cn.vuejs.org/) 
-[![vue 2.0](https://img.shields.io/badge/vue-v2.2.6-green.svg)](https://cn.vuejs.org/) 
-[![vue-resuorce](https://img.shields.io/badge/vueResource-v1.3.3-green.svg)](https://github.com/pagekit/vue-resource/blob/develop/docs/http.md) 
-[![vue-router](https://img.shields.io/badge/vueRouter-v2.3.1-green.svg)](https://cn.vuejs.org/) 
-[![vuex](https://img.shields.io/badge/vuex-v2.3.1-green.svg)](https://cn.vuejs.org/) 
+[![vue-cli](https://img.shields.io/badge/vueCli-v2.8.2-orange.svg)](https://cn.vuejs.org/) [![vue 2.0](https://img.shields.io/badge/vue-v2.2.6-green.svg)](https://cn.vuejs.org/) [![vue-resuorce](https://img.shields.io/badge/vueResource-v1.3.3-green.svg)](https://github.com/pagekit/vue-resource/blob/develop/docs/http.md) [![vue-router](https://img.shields.io/badge/vueRouter-v2.3.1-green.svg)](https://cn.vuejs.org/) [![vuex](https://img.shields.io/badge/vuex-v2.3.1-green.svg)](https://cn.vuejs.org/) 
 
 > 多端（默认pc+mobile+app）的单页应用的vue工程目录
 > 
@@ -13,7 +9,13 @@
 > 整个基于vue-cli生成的目录进行修改
 
 ##	工具的工作表现
+### build 打包
+> npm run build 'device'
+> device ： 接受的参数，在 `/build/device-conf.js`下有限制
 
+1. 示例： `npm run build pc` 打一个pc端的包 
+2. 表现： 
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build-pc.png?raw=true)
 
 
 ##	整体目录
