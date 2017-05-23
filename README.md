@@ -8,7 +8,7 @@
 >
 > 整个基于vue-cli生成的目录进行修改
 
-##	工具的工作表现
+##	使用
 ### build 打包
 > 打生产环境的包，会自动把不同终端的文件按终端名称分开
 
@@ -23,8 +23,11 @@
 ### dev 开发
 > npm run dev
 > 开始进行调试，基于vue-cli的,所以基本是vue-cli的
-1.	自动打开一个网页
-![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/run-dev.png?raw=true)
+
+1.	自动打开一个网页，从这里选择要调试的终端
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/run-dev-url.png?raw=true)
+2.	开始调试
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
 ##	整体目录
     
