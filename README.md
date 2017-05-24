@@ -1,19 +1,38 @@
 # vue-multi-device-single-page 
+> 多个单页应用vue工程目录
 
 [![vue-cli](https://img.shields.io/badge/vueCli-v2.8.2-orange.svg)](https://cn.vuejs.org/) [![vue 2.0](https://img.shields.io/badge/vue-v2.2.6-green.svg)](https://cn.vuejs.org/) [![vue-resuorce](https://img.shields.io/badge/vueResource-v1.3.3-green.svg)](https://github.com/pagekit/vue-resource/blob/develop/docs/http.md) [![vue-router](https://img.shields.io/badge/vueRouter-v2.3.1-green.svg)](https://cn.vuejs.org/) [![vuex](https://img.shields.io/badge/vuex-v2.3.1-green.svg)](https://cn.vuejs.org/) 
 
-> 多端（也可以是多页）（例子中设置了pc+mobile+app）的单页应用的vue工程目录
+###	需求分析：
+####	需求：
+1.	要开发pc端 + 移动端 + app混合开发的 页面，每个页面都是单页应用
+2.	为了节约开发成本，这几个端要共用一些组件，和 方法
+3.	打包要方便，调试要方便
+4.	vue应用
+
+####	几个问题：
+1.	vue-cli提供了非常好的开发环境，我能否在这个基础上整一整，解决掉需求 2 和 3 呢？
+2.	vue + vuex + vue-resuorce +vue-route 的工程目录应该怎么设置呢？
+
+> 面对这样的需求，我的理解是把多个单页应用融合到一个工程里面，下面是我的解决办法
+
+####	这个工程里面有什么
+
+> github [https://github.com/vincentmrlau/vue-multi-device-single-page](https://github.com/vincentmrlau/vue-multi-device-single-page)，欢迎交流
+> 
+> 多端（也可以是多页）的单页应用的vue工程目录,本质上是多个单页应用
 > 
 > 基于vue,整合了vuex vue-resuorece vue-router
 > 
-> 整个基于vue-cli生成的目录进行修改
+> 整个基于vue-cli生成的目录进行修改，除了test（正在研究）外的功能均可使用
+
 
 ##	src目录结构及其意义
 > 介绍src的目录设置及其作用
 > 
 > 介绍 界面-模板html-组件-store-接口 的关系
 
-###  概况两图流
+####  概况两图流
 1.	pc主页示意图
 
 ![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
@@ -23,7 +42,7 @@
 ![分析图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/whole-view.png?raw=true)
 
 
-###	目录设置及其作用
+####	目录设置及其作用
 ```
 ├─src			# 源文件目录
 │  │  config.js
@@ -82,7 +101,7 @@
 │                  root.js	# 公用的types
 ```
 
-### 界面-模板-组件 的关系
+#### 界面-模板-组件 的关系
 > 界面：最后展现在用户面前的
 > 
 > 模板：用来注入打包的html文件
@@ -93,7 +112,7 @@
 
 ![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
-###	组件-store(vuex)-api(vue-resuorce) 的关系
+####	组件-store(vuex)-api(vue-resuorce) 的关系
 1.	组件使用store：
 	1.	通过辅助函数（mapGetters,mapActions等）把store的属性映射到组件中使用
 	2.	组件通过action来提交mutation修改状态
@@ -113,12 +132,12 @@
 
 ##	使用 
 
-###	多终端（页面）路径设置
+####	多终端（页面）路径设置
 1.	在src/device/目录下添加终端（页面）路径，如:src/device/pc/
 2.	在新添加的文件下加入这个终端（页面）使用的打包模板，命名为index.html,如：src/device/pc/index.html
 3.	在新添加的文件下加入这个终端（页面）使用的入口文件，命名为index.js,如：src/device/pc/index.js
 
-### build 打包
+#### build 打包
 > 打生产环境的包，会自动把不同终端的文件按终端名称分开
 
 ![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build.png?raw=true)
@@ -132,7 +151,7 @@
 > 
 > 打所有终端的包
 
-### dev 开发
+#### dev 开发
 > npm run dev
 > 
 > 开始进行调试，基于vue-cli的,所以基本是vue-cli的
@@ -147,7 +166,7 @@
 
 ##	对比vue-cli v2.8.2生成的配置修改的地方
 
-###	新增加：build/device-conf.js 用来出路多终端（页面）开发相关问题
+####	新增加：build/device-conf.js 用来出路多终端（页面）开发相关问题
 
 ```
 
@@ -198,7 +217,7 @@ exports.checkDevice = checkDevice
 exports.polyfills = ['babel-polyfill']
 
 ```
-### 添加:/build/build-all.js
+#### 添加:/build/build-all.js
 > 内部根据 deviceList 产生运行build.js子进程，完成打包
 
 ```
@@ -218,7 +237,7 @@ for( var x in deviceList){
 
 ```
 
-###	修改/build/build.js
+####	修改/build/build.js
 > 添加设置环境变量并检查参数代码
 
 ```
@@ -238,7 +257,7 @@ if(device){
 }
 ```
 
-###	修改/build/build.js
+####	修改/build/build.js
 1.	添加一个路由（在使用中间件connect-history-api-fallback之前添加），把可调试的入口展示出来
 
 ```
@@ -260,7 +279,7 @@ opn(uri + '/devDeviceList')
 ```
 
 
-###	修改/config/index.js 主要修改模板入口，打包出口等
+####	修改/config/index.js 主要修改模板入口，打包出口等
 
 ```
 // see http://vuejs-templates.github.io/webpack for documentation.
@@ -312,7 +331,7 @@ module.exports = {
 }
 ```
 
-###	修改 /build/webpack.dev.conf.js 
+####	修改 /build/webpack.dev.conf.js 
 > 主要修改了入口配置，出口配置，以及模板文件配置
 
 ```
@@ -403,7 +422,7 @@ module.exports = merge(baseWebpackConfig, {
 })
 
 ```
-###	修改  /build/webpack.prod.conf.js
+####	修改  /build/webpack.prod.conf.js
 > 主要修改了入口配置，出口配置，以及模板文件配置
 
 ```
