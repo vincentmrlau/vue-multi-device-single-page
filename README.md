@@ -1,7 +1,12 @@
 # vue-multi-device-single-page 
-> 多个单页应用vue工程目录
+> 多个单页应用vue工程的开发环境
+> 这个vue工程的目录设置
 
 [![vue-cli](https://img.shields.io/badge/vueCli-v2.8.2-orange.svg)](https://cn.vuejs.org/) [![vue 2.0](https://img.shields.io/badge/vue-v2.2.6-green.svg)](https://cn.vuejs.org/) [![vue-resuorce](https://img.shields.io/badge/vueResource-v1.3.3-green.svg)](https://github.com/pagekit/vue-resource/blob/develop/docs/http.md) [![vue-router](https://img.shields.io/badge/vueRouter-v2.3.1-green.svg)](https://cn.vuejs.org/) [![vuex](https://img.shields.io/badge/vuex-v2.3.1-green.svg)](https://cn.vuejs.org/) 
+
+##	本文内容：
+1.	vue + vuex + vue-resuorce + vue-route 的工程 的目录设计
+2.	基于 vue-cli 的 多个vue单页应用的开发环境 搭建
 
 ###	需求分析：
 ####	需求：
@@ -12,17 +17,17 @@
 
 ####	几个问题：
 1.	vue-cli提供了非常好的开发环境，我能否在这个基础上整一整，解决掉需求 2 和 3 呢？
-2.	vue + vuex + vue-resuorce +vue-route 的工程目录应该怎么设置呢？
+2.	vue + vuex + vue-resuorce +vue-route 的工程目录应该怎么设计呢？
 
 > 面对这样的需求，我的理解是把多个单页应用融合到一个工程里面，下面是我的解决办法
 
-####	这个工程里面有什么
+####	这个工程是啥
 
 > github [https://github.com/vincentmrlau/vue-multi-device-single-page](https://github.com/vincentmrlau/vue-multi-device-single-page)，欢迎交流
 > 
-> 多端（也可以是多页）的单页应用的vue工程目录,本质上是多个单页应用
+> 多端（也可以是多页）的单页应用的vue工程的开发环境,本质上是多个单页应用
 > 
-> 基于vue,整合了vuex vue-resuorece vue-router
+> 基于vue,整合了vuex vue-resuorece vue-router 的开发目录设计
 > 
 > 整个基于vue-cli生成的目录进行修改，除了test（正在研究）外的功能均可使用
 
@@ -110,7 +115,7 @@
 
 他们的关系如图：
 
-![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
+![view-components](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/view-com.png?raw=true)
 
 ####	组件-store(vuex)-api(vue-resuorce) 的关系
 1.	组件使用store：
