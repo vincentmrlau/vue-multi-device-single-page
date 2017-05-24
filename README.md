@@ -6,12 +6,72 @@
 > 基于vue,整合了vuex vue-resuorece vue-router
 > 整个基于vue-cli生成的目录进行修改
 
-##	文档目录
-1.	[使用](#content)
-##	开发的目录结构
+##	src目录结构及其意义
+> 介绍src的目录设置及其作用
+> 介绍 界面-组件-vuex-接口 的关系
+> 概况两图流
 > 
 
-##	<span id="build">使用 </span>
+###	目录设置及其作用
+```
+├─src			# 源文件目录
+│  │  config.js
+│  │  
+│  ├─api		# 多端共用的 api
+│  │      device-root.js
+│  │      middleware.js
+│  │      
+│  ├─assets		# 多端共用的 资源
+│  │      logo.png
+│  │      
+│  ├─components	# 多端共用的 组件
+│  │      RootCommonComponent.vue
+│  │      
+│  └─device		# 设备入口 
+│      ├─app	# 混合开发的放这里了，也可以分 ios 和 安卓
+│      │      index.html	# app专用的html模板，打包好的东西会自动注入
+│      │      index.js		# app的入口文件
+│      │      
+│      ├─mobile		# 这里放移动端的页面 ，下面的 index文件作用类似其他端
+│      │      index.html	
+│      │      index.js
+│      │      
+│      └─pc			# 这个目录下的都是pc端使用的，当然其他端要用也是可以的，哈哈
+│          │  App.vue		# 入口组件
+│          │  index.html	# 模板文件
+│          │  index.js		# 入口文件
+│          │  
+│          ├─api			# 分离开接口
+│          │      home.js	# home这个模块用的接口
+│          │      middleware.js			# 一些公用的中间件
+│          │      
+│          ├─assets			# 资源
+│          ├─components		# 组件
+│          │  ├─commonComponents	# 公共组件
+│          │  │      Header.vue
+│          │  │      
+│          │  ├─Home	# home这个模块用的组件
+│          │  │      Body.vue
+│          │  │      Index.vue
+│          │  │      
+│          │  └─Page404	# 404这个模块用的组件
+│          │          Index.vue
+│          │          
+│          ├─router		# 路由
+│          │      index.js
+│          │      
+│          ├─store		# vuex 的store
+│          │  │  index.js	# 根级别的store + 模块组装
+│          │  │  
+│          │  └─modules		# store 模块
+│          │          home.js	# home这个模块使用的store
+│          │          
+│          └─types			# 放类型名称
+│                  home.js	# home这个模块使用的 types
+│                  root.js	# 公用的types
+```
+
+##	使用 
 ### build 打包
 > 打生产环境的包，会自动把不同终端的文件按终端名称分开
 
@@ -32,7 +92,7 @@
 2.	开始调试
 ![index-pc](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
-##	<span id="content">目录注释 </span>
+##	目录注释 
     
 ```
 │  .babelrc
