@@ -77,7 +77,12 @@
 ```
 
 ### 界面-模板-组件 的关系
+> 界面：最后展现在用户面前的
+> 模板：用来注入打包的html文件
+> 组件：编写的vue组件
 
+他们的关系如图：
+![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
 ##	使用 
 ### build 打包

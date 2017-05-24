@@ -1,11 +1,13 @@
 // 设备清单
 var chalk = require('chalk')
+var glob = require('glob')
 
-var deviceList = [
-  'pc',
-  'mobile',
-  'app'
-]
+// 获取deviceList
+var deviceList = []
+var deviceSrcArray = glob.sync('./src/device/*')
+for(var x in deviceSrcArray){
+  deviceList.push(deviceSrcArray[x].split('/')[3])
+}
 
 // 检测是否在输入的参数是否在允许的list中
 var checkDevice = function () {
