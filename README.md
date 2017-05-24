@@ -8,12 +8,14 @@
 
 ##	src目录结构及其意义
 > 介绍src的目录设置及其作用
-> 介绍 界面-模板html-组件-vuex-接口 的关系
+> 介绍 界面-模板html-组件-store-接口 的关系
 
 ###  概况两图流
 1.	pc主页示意图
+
 ![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
-2.	分析图（不知道应该怎么画）
+2.	分析图（怎一个乱字了得）
+
 ![分析图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/whole-view.png?raw=true)
 
 
@@ -82,7 +84,12 @@
 > 组件：编写的vue组件
 
 他们的关系如图：
+
 ![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
+
+###	组件-store(vuex)-api(vue-resuorce) 的关系
+
+
 
 ##	使用 
 ### build 打包
