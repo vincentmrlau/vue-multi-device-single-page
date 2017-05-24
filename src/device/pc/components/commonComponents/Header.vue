@@ -1,7 +1,7 @@
 <template>
   <h4>
-    这里是来自pc的公共组件库的header <br>
-    适合被PC端的页面使用
+    本宝宝来自/src/device/pc/components/commonComponents/Header.vue,<br>
+    我比较适合被device/pc/下的页面使用，其他的要搞我我就╭(╯^╰)╮
   </h4>
 </template>
 

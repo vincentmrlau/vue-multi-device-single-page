@@ -1,7 +1,7 @@
 <template>
   <h4>
-    这里是来自pc的Home的Body的内容 <br>
-    适合被pc/HOME页面使用.
+    终于轮到我了，来自/src/device/pc/components/home/Body.vue,<br>
+    我比较适合被device/pc/home下的组件使用(*^__^*)
   </h4>
 </template>
 

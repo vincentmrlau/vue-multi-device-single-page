@@ -4,13 +4,13 @@
     <_Header/>
     <_Body/>
     <h3>{{msg}}</h3>
-    <h4>来自/pc/store/index.js的state 通过/pc/store/index.js的getter获取，count:{{count}}</h4>
+    <h4>来自/pc/store/index.js的state 通过/pc/store/index.js的getter获取，<span>count:{{count}}</span></h4>
     <button v-on:click="add2">触发/pc/store/index.js的action,提交/pc/store/index.js里一个改变count的mutation</button>
     <br>
     <br>
     <button v-on:click="homeAdd2">触发/pc/store/home.js的action，提交的是/pc/store/index.js里一个改变count的mutation</button>
     <br>
-    <h4>来自/pc/store/home.js的state,通过/pc/store/home.js的getter获取，auth: {{auth}}</h4>
+    <h4>来自/pc/store/home.js的state,通过/pc/store/home.js的getter获取，<span> auth: {{auth}}</span></h4>
     <button v-on:click="getAuth">>触发/pc/store/home.js的action，发起一个来自/src/api/device-root.js的请求方法，这个方法使用了来自/src/api/middleware.js的中间件setAuth，请求完成后，提交的是/pc/store/home.js里一个改变auth的mutation</button>
     <br>
     <br>
@@ -62,5 +62,8 @@
     font-size: 16px;
     letter-spacing: 1px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  span{
+    background-color: yellow;
   }
 </style>

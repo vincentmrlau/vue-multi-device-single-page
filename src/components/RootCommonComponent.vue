@@ -1,7 +1,7 @@
 <template>
   <h4>
-    这里是来自跟级别的组件,<br>
-    可以被pc端，app端，移动端使用
+    本宝宝来自/src/components/RootCommonComponent.vue,<br>
+    被devie目录下的任何端使用我都没有所谓(*^__^*)
   </h4>
 </template>
 <script>

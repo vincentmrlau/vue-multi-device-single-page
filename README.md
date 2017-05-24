@@ -8,9 +8,14 @@
 
 ##	src目录结构及其意义
 > 介绍src的目录设置及其作用
-> 介绍 界面-组件-vuex-接口 的关系
-> 概况两图流
-> 
+> 介绍 界面-模板html-组件-vuex-接口 的关系
+
+###  概况两图流
+1.	pc主页示意图
+![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
+2.	分析图（不知道应该怎么画）
+![分析图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/whole-view.png?raw=true)
+
 
 ###	目录设置及其作用
 ```
@@ -70,6 +75,9 @@
 │                  home.js	# home这个模块使用的 types
 │                  root.js	# 公用的types
 ```
+
+### 界面-模板-组件 的关系
+
 
 ##	使用 
 ### build 打包
