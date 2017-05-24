@@ -7,8 +7,21 @@
 ##	本文内容：
 1.	vue + vuex + vue-resuorce + vue-route 的工程 的目录设计
 2.	基于 vue-cli 的 多个vue单页应用的开发环境 搭建
+### 目录：
+> 一、需求分析
+> 
+> 二、开发思路
+> 
+> 三、src目录设计及思路
+> 
+> 四、开发环境使用
+> 
+> 五、开发环境开发
+> 
+> 六、整个开发环境的目录注释
 
-###	需求分析：
+
+###	一、需求分析：
 ####	需求：
 1.	要开发pc端 + 移动端 + app混合开发的 页面，每个页面都是单页应用
 2.	为了节约开发成本，这几个端要共用一些组件，和 方法
@@ -31,8 +44,21 @@
 > 
 > 整个基于vue-cli生成的目录进行修改，除了test（正在研究）外的功能均可使用
 
+##	二、开发思路
 
-##	src目录结构及其意义
+1、设置公用组件的目录
+
+2、抽离api，分为公用的api和属于各个页面自己的api
+
+3、每个单页应用vuex管理状态
+
+4、可能会被多人同时编辑，如何尽量减少merge
+
+5、针对这样的需求的src下面的目录应该怎么设计（第三部分有写）
+
+6、针对需求配置开发环境（从第 部门开始是关于这个开发环境的）
+
+##	三、src目录设计及思路
 > 介绍src的目录设置及其作用
 > 
 > 介绍 界面-模板html-组件-store-接口 的关系
@@ -135,7 +161,7 @@
 ![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/vuex-api-com.png?raw=true)
 
 
-##	使用 
+##	四、开发环境使用
 
 ####	多终端（页面）路径设置
 1.	在src/device/目录下添加终端（页面）路径，如:src/device/pc/
@@ -169,7 +195,8 @@
 
 ![index-pc](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
-##	对比vue-cli v2.8.2生成的配置修改的地方
+##	五、开发环境开发
+> 在vue-cli v2.8.2生产的开发环境的基础上进行修改
 
 ####	新增加：build/device-conf.js 用来出路多终端（页面）开发相关问题
 
@@ -570,7 +597,7 @@ module.exports = webpackConfig
 
 ```
 
-##	目录注释 
+##	六、整个开发环境的目录注释 
     
 ```
 │  .babelrc
