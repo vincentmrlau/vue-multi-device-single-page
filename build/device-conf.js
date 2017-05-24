@@ -1,4 +1,4 @@
-// 设备清单
+
 var chalk = require('chalk')
 var glob = require('glob')
 

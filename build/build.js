@@ -1,7 +1,8 @@
 require('./check-versions')()
-var chalk = require('chalk')
 
 process.env.NODE_ENV = 'production'
+
+var chalk = require('chalk')
 // 设置process.env.DEVICE_ENV参数
 // 没有则返回错误
 var device = process.argv[2]

@@ -7,7 +7,7 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-var device = process.env.DEVICE_ENV
+// var device = process.env.DEVICE_ENV
 
 
 
