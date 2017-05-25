@@ -8,20 +8,53 @@
 1.	vue + vuex + vue-resuorce + vue-route 的工程 的目录设计
 2.	基于 vue-cli 的 多个vue单页应用的开发环境 搭建
 ### 目录：
-> 一、需求分析
+> 一、开发环境使用
+>
+> 二、需求分析
 > 
-> 二、开发思路
+> 三、开发思路
 > 
-> 三、src目录设计及思路
-> 
-> 四、开发环境使用
+> 四、src目录设计及思路
 > 
 > 五、开发环境开发
 > 
 > 六、整个开发环境的目录注释
 
+##	一、开发环境使用
 
-###	一、需求分析：
+####	多终端（页面）路径设置
+1.	在src/device/目录下添加终端（页面）路径，如:src/device/pc/
+2.	在新添加的文件下加入这个终端（页面）使用的打包模板，命名为index.html,如：src/device/pc/index.html
+3.	在新添加的文件下加入这个终端（页面）使用的入口文件，命名为index.js,如：src/device/pc/index.js
+
+#### build 打包
+> 打生产环境的包，会自动把不同终端的文件按终端名称分开
+
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build.png?raw=true)
+> npm run build 'device'
+> 
+> device ： 接受的参数，在 `/build/device-conf.js`里面有限制
+> 
+> 示例： `npm run build pc` 打一个pc端的包 
+
+> npm run build-all
+> 
+> 打所有终端的包
+
+#### dev 开发
+> npm run dev
+> 
+> 开始进行调试，基于vue-cli的,所以基本是vue-cli的
+
+1.	自动打开一个网页，从这里选择要调试的终端
+
+![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/run-dev-url.png?raw=true)
+
+2.	开始调试
+
+![index-pc](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
+
+###	二、需求分析：
 ####	需求：
 1.	要开发pc端 + 移动端 + app混合开发的 页面，每个页面都是单页应用
 2.	为了节约开发成本，这几个端要共用一些组件，和 方法
@@ -44,7 +77,7 @@
 > 
 > 整个基于vue-cli生成的目录进行修改，除了test（正在研究）外的功能均可使用
 
-##	二、开发思路
+##	三、开发思路
 
 1、设置公用组件的目录
 
@@ -58,7 +91,7 @@
 
 6、针对需求配置开发环境（从第 部门开始是关于这个开发环境的）
 
-##	三、src目录设计及思路
+##	四、src目录设计及思路
 > 介绍src的目录设置及其作用
 > 
 > 介绍 界面-模板html-组件-store-接口 的关系
@@ -161,39 +194,6 @@
 ![主页示意图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/vuex-api-com.png?raw=true)
 
 
-##	四、开发环境使用
-
-####	多终端（页面）路径设置
-1.	在src/device/目录下添加终端（页面）路径，如:src/device/pc/
-2.	在新添加的文件下加入这个终端（页面）使用的打包模板，命名为index.html,如：src/device/pc/index.html
-3.	在新添加的文件下加入这个终端（页面）使用的入口文件，命名为index.js,如：src/device/pc/index.js
-
-#### build 打包
-> 打生产环境的包，会自动把不同终端的文件按终端名称分开
-
-![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/build.png?raw=true)
-> npm run build 'device'
-> 
-> device ： 接受的参数，在 `/build/device-conf.js`里面有限制
-> 
-> 示例： `npm run build pc` 打一个pc端的包 
-
-> npm run build-all
-> 
-> 打所有终端的包
-
-#### dev 开发
-> npm run dev
-> 
-> 开始进行调试，基于vue-cli的,所以基本是vue-cli的
-
-1.	自动打开一个网页，从这里选择要调试的终端
-
-![build-pc示例图](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/run-dev-url.png?raw=true)
-
-2.	开始调试
-
-![index-pc](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
 ##	五、开发环境开发
 > 在vue-cli v2.8.2生产的开发环境的基础上进行修改
