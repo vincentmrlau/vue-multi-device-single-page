@@ -7,7 +7,7 @@
 ##	本文内容：
 1.	vue + vuex + vue-resuorce + vue-route 的工程 的目录设计
 2.	基于 vue-cli 的 多个vue单页应用的开发环境 搭建
-### 目录：
+## 目录：
 > 一、开发环境使用
 >
 > 二、需求分析
@@ -54,7 +54,7 @@
 
 ![index-pc](https://github.com/vincentmrlau/vue-multi-device-single-page/blob/master/images/pc-index.png?raw=true)
 
-###	二、需求分析：
+##	二、需求分析：
 ####	需求：
 1.	要开发pc端 + 移动端 + app混合开发的 页面，每个页面都是单页应用
 2.	为了节约开发成本，这几个端要共用一些组件，和 方法
