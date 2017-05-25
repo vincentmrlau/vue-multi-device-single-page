@@ -1,6 +1,6 @@
 # vue-multi-device-single-page 
-> 多个单页应用vue工程的开发环境
-> 这个vue工程的目录设置
+> 多个单页应用整合的vue工程的开发环境
+> vue工程的目录设置
 
 [![vue-cli](https://img.shields.io/badge/vueCli-v2.8.2-orange.svg)](https://cn.vuejs.org/) [![vue 2.0](https://img.shields.io/badge/vue-v2.2.6-green.svg)](https://cn.vuejs.org/) [![vue-resuorce](https://img.shields.io/badge/vueResource-v1.3.3-green.svg)](https://github.com/pagekit/vue-resource/blob/develop/docs/http.md) [![vue-router](https://img.shields.io/badge/vueRouter-v2.3.1-green.svg)](https://cn.vuejs.org/) [![vuex](https://img.shields.io/badge/vuex-v2.3.1-green.svg)](https://cn.vuejs.org/) 
 
